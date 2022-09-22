@@ -1,34 +1,334 @@
-version: "2.0"
-
+version: "3.1"
 intents:
-  - greet
-  - goodbye
   - affirm
+  - bot_challenge
+  - buy_pizza
   - deny
+  - goodbye
+  - greet
+  - inform
   - mood_great
   - mood_unhappy
-  - bot_challenge
+  - stop
+  - numbers
+entities:
+  - start_questionnaire
+slots:
+  start_questionnaire:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: start_questionnaire
+  VANumber:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: VANumber
+  diabetes:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: diabetes
+  diabetes_doctor:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: diabetes_doctor
+  review:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: review
+  drive:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: drive
+  vocational_driving:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: vocational_driving
+  driving_lorry_van_truck:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: driving_lorry_van_truck
+  difficulty_driving_because_vision:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: difficulty_driving_because_vision
+  drove_previously:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: drove_previously
+  stop_less_than_month_ago:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: stop_less_than_month_ago
+  stopped_driving_because_of_eyesight:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: stopped_driving_because_of_eyesight
+  difficulty_with_daily_activities:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: difficulty_with_daily_activities
+  difficulty_reading_with_glasses:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: difficulty_reading_with_glasses
+  things_you_enjoy:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: things_you_enjoy
+  eyesight_affecting_your_mentioned_activity:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: eyesight_affecting_your_mentioned_activity
+  activities:
+    type: bool #change type after confirmation to allow multiple choice selection
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: activities
+ surroundings:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: surroundings
+ cataract: #cataract surgery slot, have to allow words instead too for unclear intent + unclear button
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_eye_form
+            requested_slot: cataract
+forms:
+  simple_eye_form:
+    required_slots:
+      - start_questionnaire
+      - VANumber
+      - review
+      
+      
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+    - text: Hello, how are you feeling today? Below are a few questions to allow me to get to understand your condition better.
+  utter_ask_start_questionnaire:
+    - text: Shall we begin?
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_VANumber:
+    - text: What was your Visual Acuity number?
+    buttons:
+        - title: "Better than 6/12"
+          payload: Yes
+        - title: "Worse than 6/12"
+          payload: No
+  utter_ask_diabetes:
+    - text: Do you have diabetes? (Regardless of being on medication or currently not taking any diabetic medication)
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_diabetes_doctor:
+    - text: Are you seeing a physician for your diabetes/glucose control?
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_review:
+    - text: Thanks! Has there been any change in your eye condition since your last eye review?
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_drive:
+    - text: Did you use to drive?
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_vocational_driving:
+    - text: Do you drive for vocational purpose? (yes/no)
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+  utter_ask_driving_lorry_van_truck:
+    - text: Do you drive a lorry/van/truck?
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_difficulty_driving_because_vision:
+    - text: Do you have any difficulty driving because of your vision?
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_drove_previously:
+    - text: Did you used to drive?
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_stop_less_than_month_ago:
+    - text: Did you stop driving more or less than a month ago? (More than a year ago/less than a year ago)
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_stopped_driving_because_of_eyesight:
+    - text: Did you stop driving because of your eyesight? (Yes/No)
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_difficulty_with_daily_activities:
+    - text: Do you have difficulty carrying out your daily activities at home? (Yes/No)
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_difficulty_reading_with_glasses:
+    - text: Do you have any difficulty, even with glasses, reading a newspaper or a book? (Yes/No)
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_things_you_enjoy:
+    - text: What are the things you enjoy doing usually?
+  utter_ask_eyesight_affecting_your_mentioned_activity:
+    - text: Is your eyesight affecting your enjoyment of the above activity/activities? (Yes/No)
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+   utter_ask_activities: #added response for slot for positive intent with good VA
+    - text: That is great to hear! I would like to find out about certain activities that you do and if your vision is affecting you! 
+      buttons:
+        - title: "Is your vision affecting your ability to read?"
+          payload: "/affirm" #note, change payload when confirmed for all the buttons as well as slot type
+        - title: "Is your vision affecting your ability to count money?"
+          payload: "/deny"
+        - title: "Is your vision affecting your ability to walk?"
+          payload: "/deny"
+        - title: "Is your vision affecting your ability to cook?"
+          payload: "/deny"
+  utter_ask_surroundings: #used \n\n for paragraph break
+    - text: "That is good to hear! However the visual acuity tested prior shows that vision is not as good. Please close your right eye and look at your surroundings, does it look okay to you? \n\n Now close your left eye and look at your surroundings, does it look okay to you?"
+  utter_ask_cataract:
+    - text: Would you be keen for cataract surgery?
+      buttons:
+        - title: Yes
+          payload: Yes
+        - title: No
+          payload: No
+        - title: "What is cataract surgery about?"
+          payload: No #change payload for unknown
+actions:
+  - utter_ask_VANumber
+  - utter_ask_diabetes
+  - utter_ask_diabetes_doctor
+  - utter_ask_difficulty_driving_because_vision
+  - utter_ask_difficulty_reading_with_glasses
+  - utter_ask_difficulty_with_daily_activities
+  - utter_ask_drive
+  - utter_ask_driving_lorry_van_truck
+  - utter_ask_drove_previously
+  - utter_ask_eyesight_affecting_your_mentioned_activity
+  - utter_ask_review
+  - utter_ask_start_questionnaire
+  - utter_ask_stop_less_than_month_ago
+  - utter_ask_stopped_driving_because_of_eyesight
+  - utter_ask_things_you_enjoy
+  - utter_ask_vocational_driving
+  - utter_greet
+  - validate_simple_eye_form
+  - utter_ask_activities
+  - utter_ask_surroundings
+  - utter_ask_cataract
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
