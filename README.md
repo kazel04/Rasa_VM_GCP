@@ -66,6 +66,7 @@ Youtube Video:
 https://youtu.be/qOHszxJsuGs
 
 ## Debugging Notes:
+- All commands must be run in the terminal opened after SSH-ing into the GCP VM
 - For NLU & stories, add your own yml to replace the md in the backend folder
 - Replace the old rasa files in the backend, rasa training and model creation is from the backend folder
 - When accessing the VM's external IP address for the web app demo, remember to remove the "https://" from the url 
