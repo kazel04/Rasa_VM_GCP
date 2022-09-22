@@ -72,5 +72,6 @@ https://youtu.be/qOHszxJsuGs
 - Replace the old rasa files in the backend, rasa training and model creation is from the backend folder
 - When accessing the VM's external IP address for the web app demo, remember to remove the "https://" from the url 
 - To update, commit new rasa files into the appropriate folders like backend, then git pull in the VM's folder of the repo and run the docker compose up command
+- When creating new VM instance, allow HTTP and HTTPS traffic and allow full access to all cloud APIs
 
 
