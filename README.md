@@ -67,5 +67,5 @@ https://youtu.be/qOHszxJsuGs
 
 ## Debugging Notes:
 - For NLU & stories, add your own yml to replace the md in the backend folder
-- 
+- Replace the old rasa files in the backend, rasa training and model creation is from the backend folder
 
