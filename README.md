@@ -65,3 +65,7 @@ Youtube Video:
 
 https://youtu.be/qOHszxJsuGs
 
+## Debugging Notes:
+- For NLU & stories, add your own yml to replace the md in the backend folder
+- 
+
