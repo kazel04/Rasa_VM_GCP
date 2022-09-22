@@ -150,7 +150,7 @@ slots:
         conditions:
           - active_loop: simple_eye_form
             requested_slot: activities
- surroundings:
+surroundings:
     type: text
     influence_conversation: true
     mappings:
@@ -158,7 +158,7 @@ slots:
         conditions:
           - active_loop: simple_eye_form
             requested_slot: surroundings
- cataract: #cataract surgery slot, have to allow words instead too for unclear intent + unclear button
+cataract: #cataract surgery slot, have to allow words instead too for unclear intent + unclear button
     type: bool
     influence_conversation: true
     mappings:
@@ -187,7 +187,7 @@ responses:
           payload: No
   utter_ask_VANumber:
     - text: What was your Visual Acuity number?
-    buttons:
+      buttons:
         - title: "Better than 6/12"
           payload: Yes
         - title: "Worse than 6/12"
@@ -285,7 +285,7 @@ responses:
           payload: "/affirm"
         - title: "No"
           payload: "/deny"
-   utter_ask_activities: #added response for slot for positive intent with good VA
+  utter_ask_activities: #added response for slot for positive intent with good VA
     - text: That is great to hear! I would like to find out about certain activities that you do and if your vision is affecting you! 
       buttons:
         - title: "Is your vision affecting your ability to read?"
