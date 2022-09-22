@@ -1,5 +1,4 @@
-version: "2.0"
-
+version: "3.1"
 nlu:
 - intent: greet
   examples: |
@@ -9,17 +8,18 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
+    - morning
     - hey there
     - let's go
     - hey dude
     - goodmorning
     - goodevening
     - good afternoon
-
+    - yo
+    - hello world
+    - hi there
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -30,7 +30,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
+    - thanks, goodbye
 - intent: affirm
   examples: |
     - yes
@@ -39,6 +39,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - affirm
 
 - intent: deny
   examples: |
@@ -49,7 +50,8 @@ nlu:
     - don't like that
     - no way
     - not really
-
+    - i do not play sports anymore
+    - i do not play golf anymore
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +68,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,10 +84,391 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
+- intent: stop
+  examples: |
+    - stop
+    - nevermind
+    - please stop
+    - i want to stop
+    - stop the form
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: numbers
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 32
+    - 873
+    - 72
+    - 8
+    - 102
+- intent: othersymptoms
+  examples: |
+    - itchy
+    - itchy eyes
+    - see double
+    - eyelid lump
+    - pimple on my eyelid
+    - hit my eye
+    - bumped my eye
+    - bleeding
+    - red eye
+    - dry eye
+    - diplopia
+    - eye pain
+    - scratch eye
+    - red
+
+- intent: negativevision
+  examples: |
+   - bad
+   - terrible
+   - i cannot see
+   - i cant see
+   - i lost vision
+   - poor
+   - have been better
+   - poor vision
+   - blur vision
+   - blur
+   - my eyes are blur
+   - have difficulty
+   - see glare
+   - vision is blur
+   - seeing yellow
+   - cannot see well in dark
+   - cannot read
+   - cannot see far 
+   - cannot play sports
+   - horrible
+   - worse
+   - worst
+   - unpleasant
+   - pitiful
+   - dire
+   - deplorable
+   - hopeless
+   - worthless
+   - deficient
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - i do not play sports anymore
+    - i do not play golf anymore
+    - nah, i mean i used to then i stopped for abit to take a piss but otherwise nope
+- intent: goodvision
+  examples: |
+    - vision is great
+    - so far so good!
+    - so far so good
+    - Vision is good
+    - good vision
+    - My vision is okay
+    - It is the same
+    - No change
+    - I feel okay
+    - Same as before
+    - I see okay
+    - Nothing changed
+    - I have no complaint
+    - Looks OK/OKAY
+    - I am ok
+    - vision is good
+    - excellent
+    - fine
+    - quality
+    - alright
+    - okie
+    - not bad
+    - superb
+    - awesome
+    - its not bad, seems ok lah
+    - sexy vision
+    - great
+    - satisfactory
+    - amazing
+    - acceptable
+    - superior
+    - outstanding
+    - upstanding
+    - clean
+    - exemplary
+    - top-notch
+    - exceptional
+    - splendid
+    - fantastic
+    - tremendous
+    - worthy
+    - first-rate
+    - tip-top
+    - on fleek
+    - smashing
+    - swell
+    - terrific
+    - not bad, alls good
+    - vision decent
+    - yep, its fine
+    - no problem
+    - vision is decent
+    - Nope, vision is perfectly fine
+    - vision is alright
+    - vision looks good
+    - vision is wonderful
+    - vision is perfect
+    - everything's fine
+- intent: vaguevision
+  examples: |
+    - Not sure
+    - Not very sure
+    - unsure
+    - idk
+    - not sure leh
+    - its so so
+    - its not really good or bad leh
+    - vague
+    - uncertain
+    - up in the air
+    - unknown
+    - not really sure
+    - terrible
+- intent: goodactivities
+  examples: |
+    - Vision is good
+    - good vision
+    - My vision is okay
+    - It is the same
+    - No change
+    - I feel okay
+    - Same as before
+    - I see okay
+    - Nothing changed
+    - I have no complaint
+    - Looks OK/OKAY
+    - I am ok
+    - vision is good
+    - excellent
+    - fine
+    - quality
+    - alright
+    - okie
+    - not bad
+    - superb
+    - awesome
+    - vision decent
+    - nope, I can do all those activities just fine
+    - yep, its fine
+    - no problem
+    - vision is decent
+    - Nope, vision is perfectly fine
+    - vision is alright
+    - vision looks good
+    - can do all those activities
+    - doesn't affect these activities
+    - nope vision doesn't affect these activities
+    - nope, doesnt affect anything
+    - nope, it doesn't affect
+    - nope alls good
+    - nope not at all
+- intent: vabad
+  examples: |
+    - 6/12
+    - 6/15
+    - 6/18
+- intent: vagood
+  examples: |
+    - 6/6
+    - [6/9](vagood)
+    - [6/8](vagood)
+    - [6/6](vagood)
+- intent: anysurroundings
+  examples: |
+    - Looks the same in both eyes
+    - no blurring of vision
+    - only right side
+    - Yea, all looks good
+    - looks good
+    - Not sure
+    - Not very sure
+    - unsure
+    - idk
+    - not sure leh
+    - its so so
+    - its not really good or bad leh
+    - vague
+    - uncertain
+    - up in the air
+    - unknown
+    - not really sure
+- intent: morethantwoactivitiesblurred
+  examples: |
+    - yeah, can't read or count money 
+    - yes, I can't seem to [read](activity) and [cook](activity) as well now
+    - yep, my vision has affected my ability to [cook](activity) and [clean](activity)
+    - yeah,  i can't [cook](activity) or [read](activity) now
+    - Cannot [drive](activity) now
+    - Cannot [clean myself](activity) well
+    - Cannnot [walk](activity) nowadays or recently
+- intent: blurredvision
+  examples: |
+    - eyesight quite blur
+    - cannot see properly
+    - cannot see
+    - blur eye
+    - blurred vision
+    - right eye blur
+    - no
+    - nope
+    - very blur
+    - mudled
+    - fuzzy
+    - unfocused
+    - misty
+    - foggy
+    - hazy
+    - vague
+    - unclear
+    - dim
+    - bleary
+    - smoky
+- intent: acute
+  examples: |
+    - less than 2 weeks
+    - quite recent
+    - about a week only
+    - a few days only
+    - recently
+- intent: chronic
+  examples: |
+    - more than 2 weeks
+    - quite long ago already
+    - long time alr
+    - been there for a while
+    - about 3 weeks back
+    - wah damn long already
+- intent: anyeye
+  examples: |
+    - left eye
+    - right eye
+    - both eyes
+- intent: suddendropdk
+  examples: |
+    - its a sudden drop in vision
+    - idk
+    - i dont know
+    - suddenly drop
+    - not sure
+- intent: slowaffect
+  examples: |
+    - its a slow affect
+    - slowly affecting
+    - slowly affect
+    - slow
+    - slowly
+- intent: effectonactivities
+  examples: |
+    - Not sure
+    - Not very sure
+    - unsure
+    - idk
+    - not sure leh
+    - its so so
+    - its not really good or bad leh
+    - vague
+    - uncertain
+    - up in the air
+    - unknown
+    - not really sure
+    - eyesight blur
+    - cannot see properly
+    - sight impacted
+    - blurry
+    - blur
+    - shadowy
+    - blocking
+    - Blurred vision
+- intent: inform
+  examples: |
+    - My email is example@example.com
+    - random@example.com
+    - Please send it to anything@example.com
+    - Email is something@example.com
+- intent: intermittent
+  examples: |
+    - Sometimes
+    - intermittent
+    - only a few times a day
+    - abit only
+    - sporadic
+    - irregular
+    - on and off
+- intent: always
+  examples: |
+    - steady
+    - always
+    - all the time
+    - day in day out
+    - day and night
+    - around the clock
+    - consistently
+    - at all times
+    - perpetually
+    - endlessly
+    - continously
+    - 24/7
+    - relentlessly
+- intent: bothsurroundingsok
+  examples: |
+    - both is ok
+    - both sides look fine
+    - eyes are fine
+    - no prpblem
+    - alright
+    - no problem
+    - all okay
+    - each side good
+    - good
+    - can see each side clearly
+
+- intent: surroundingsbad
+  examples: |
+    - both not okay
+    - both eyes blur
+    - both sides bad
+    - both sides blur
+    - cannot see properly
+    - cannot see each side clearly
+    - right side blur
+    - left side blur
+    - left side not good
+    - right side not good
+    - both sides not good
+    - all quite bad
+    - cannot see really well
+    - cannot see well
+    - not good
+    
+  
+- lookup: activity
+  examples: |
+    - read
+    - cook
+    - walk
+    - count money
+    - clean yourself
+    - drive
