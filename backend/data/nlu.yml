@@ -40,7 +40,7 @@ nlu:
     - that sounds good
     - correct
     - affirm
-
+    - Yes
 - intent: deny
   examples: |
     - no
@@ -52,6 +52,7 @@ nlu:
     - not really
     - i do not play sports anymore
     - i do not play golf anymore
+    - nah, i mean i used to then i stopped for abit to take a piss but otherwise nope
 - intent: mood_great
   examples: |
     - perfect
@@ -127,51 +128,38 @@ nlu:
     - eye pain
     - scratch eye
     - red
-
+    - reddy
 - intent: negativevision
   examples: |
-   - bad
-   - terrible
-   - i cannot see
-   - i cant see
-   - i lost vision
-   - poor
-   - have been better
-   - poor vision
-   - blur vision
-   - blur
-   - my eyes are blur
-   - have difficulty
-   - see glare
-   - vision is blur
-   - seeing yellow
-   - cannot see well in dark
-   - cannot read
-   - cannot see far 
-   - cannot play sports
-   - horrible
-   - worse
-   - worst
-   - unpleasant
-   - pitiful
-   - dire
-   - deplorable
-   - hopeless
-   - worthless
-   - deficient
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - i do not play sports anymore
-    - i do not play golf anymore
-    - nah, i mean i used to then i stopped for abit to take a piss but otherwise nope
+    - bad
+    - terrible
+    - i cannot see
+    - i cant see
+    - i lost vision
+    - poor
+    - have been better
+    - poor vision
+    - blur vision
+    - blur
+    - my eyes are blur
+    - have difficulty
+    - see glare
+    - vision is blur
+    - seeing yellow
+    - cannot see well in dark
+    - cannot read
+    - cannot see far
+    - cannot play sports
+    - horrible
+    - worse
+    - worst
+    - unpleasant
+    - pitiful
+    - dire
+    - deplorable
+    - hopeless
+    - worthless
+    - deficient
 - intent: goodvision
   examples: |
     - vision is great
@@ -317,7 +305,7 @@ nlu:
     - not really sure
 - intent: morethantwoactivitiesblurred
   examples: |
-    - yeah, can't read or count money 
+    - yeah, can't read or count money
     - yes, I can't seem to [read](activity) and [cook](activity) as well now
     - yep, my vision has affected my ability to [cook](activity) and [clean](activity)
     - yeah,  i can't [cook](activity) or [read](activity) now
@@ -444,7 +432,6 @@ nlu:
     - each side good
     - good
     - can see each side clearly
-
 - intent: surroundingsbad
   examples: |
     - both not okay
@@ -462,8 +449,21 @@ nlu:
     - cannot see really well
     - cannot see well
     - not good
-    
-  
+- intent: allactivities
+  examples: |
+    - cook
+    - write
+    - walk
+    - count money
+    - clean yourself
+    - drive
+    - cannot cook
+    - cannot write
+    - cannot write and walk
+    - cannot clean myself
+    - cannot drive
+    - cannot clean
+    - remy its cooking time
 - lookup: activity
   examples: |
     - read
