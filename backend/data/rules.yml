@@ -4,7 +4,6 @@ rules:
   - rule: Activate eye form
     steps:
       - intent: greet
-      - action: utter_greet
       - action: simple_eye_form
       - active_loop: null
       - slot_was_set:
