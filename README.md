@@ -43,7 +43,7 @@ https://www.youtube.com/watch?v=9C1Km6xfdMA
 #### Install [Docker-Compose](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 
 - > sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-- > ^ Copy this in readme mode, otherwise there will be a formatting error
+- > ^ Copy this in readme/edit mode, otherwise there will be a formatting error
 
 - > sudo chmod +x /usr/local/bin/docker-compose
 - > docker-compose --version
