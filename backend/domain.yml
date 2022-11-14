@@ -437,8 +437,6 @@ forms:
     required_slots:
     - acutevschronic
 responses:
-  utter_greet:
-  - text: Hello, how are you feeling today? Below are a few questions to allow me to get to understand your condition better.
   utter_ask_start_questionnaire:
   - text: Good afternoon, what was your score from the test you just took?
     buttons:
@@ -722,7 +720,6 @@ actions:
 - utter_ask_stopped_driving_because_of_eyesight
 - utter_ask_things_you_enjoy
 - utter_ask_vocational_driving
-- utter_greet
 - utter_ask_activityconfirm
 - validate_bovform
 session_config:
