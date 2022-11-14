@@ -424,7 +424,6 @@ slots:
 forms:
   simple_eye_form:
     required_slots:
-    - start_questionnaire
     - review
     - activityconfirm
     - cataractsurgery
